@@ -1,6 +1,12 @@
 library("seewave")
 library("tuneR")
 
+calcCharVecs <- function(wave)
+{
+    peak_matrix <- fpeaks(meanspec(wave, plot=FALSE), nmax=1, plot=FALSE)
+    peak_matrix[,1]
+}
+
 scioFreqs <- function(wave)
 {
     graph_num = 3
